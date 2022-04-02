@@ -1,0 +1,39 @@
+package com.company;
+public class Coordinate<one,two,three> implements Cloneable {
+    public one name;
+    public two age;
+    public three Id;
+
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+}
+package com.company;
+import java.util.Scanner;
+public class mainClass {
+    public static void main(String[] args) {
+        Coordinate coordinate=new Coordinate<>();
+        Scanner sc=new Scanner(System.in);
+        coordinate.name=sc.nextLine();
+        coordinate.age=sc.nextInt();
+        coordinate.Id=sc.nextInt();
+
+        System.out.println(coordinate.name);
+        System.out.println(coordinate.age);
+        System.out.println(coordinate.Id);
+
+        Coordinate obj=null;
+        try {
+            obj=(Coordinate) coordinate.clone();
+        } catch (CloneNotSupportedException e) {
+            System.out.println("invalid");
+        }
+        if (!coordinate.equals(obj)){
+            System.out.println(obj.Id);
+            System.out.println(coordinate.Id);
+            System.out.println(obj);
+            System.out.println(coordinate);
+        }
+    }
+}
