@@ -35,3 +35,59 @@ public class Main {
     }
 
 }
+package com.company;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Student<T> {
+
+    private String name;
+    private double Number;
+    private String fatherName;
+    private List<Double> grade;
+
+    public Student() {
+        grade = new LinkedList<>();
+    }
+    public Student(String Fullname, double StudentNumber, String fatherName) {
+        this();
+        setFullname(Fullname);
+        setStudentNumber(StudentNumber);
+        setFatherName(fatherName);
+    }
+    public String getFullname() {
+        return name;
+    }
+    public void setFullname(String Fullname) {
+        this.name = Fullname;
+    }
+    public double getStudentNumber() {
+        return Number;
+    }
+    public void setStudentNumber(double StudentNumber) {
+        this.Number = StudentNumber;
+    }
+    public String getFatherName() {
+        return fatherName;
+    }
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
+    }
+    public List<Double> getGrades() {
+        return grade;
+    }
+    public void setGrades(List<Double> grades) {
+        this.grade = grades;
+    }
+    public String toString() {
+        List<Double> list = getGrades();
+        String marks = "\n";
+        for (Double mark : list) {
+            marks += mark + "\n";
+        }
+        return "Fullname : " + name + ", StudentNumber : " + Number + ", fatherName : " + fatherName + ", grades : " + marks;
+    }
+
+}
+
