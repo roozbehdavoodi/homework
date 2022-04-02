@@ -1,4 +1,4 @@
-package homework1;
+package com.company;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -7,15 +7,15 @@ public class Main {
         try {
             Map<String, Object> map = new LinkedHashMap<>();
             Scanner scanner = new Scanner(System.in);
-            System.out.print("Enter Student Fullname please: ");
+            System.out.print("Enter Fullname: ");
             String fullname = scanner.nextLine();
-            System.out.print("Enter Student Number please: ");
+            System.out.print("Enter Number: ");
             double studentNumber = Double.parseDouble(scanner.nextLine());
-            System.out.print("Enter Student Average please: ");
+            System.out.print("Enter Average: ");
             double average = Double.parseDouble(scanner.nextLine());
 
             if (fullname.length() < 3) {
-                fullname = "Invalid Entered!";
+                fullname = "Invalid!";
             }
 
             if (studentNumber < 0) {
@@ -27,7 +27,7 @@ public class Main {
             }
 
             map.put("fullname", fullname);
-            map.put("studentNumber", studentNumber);
+            map.put("Number", studentNumber);
             map.put("average", average);
 
             System.out.println("---------------------------------------------------");
@@ -35,8 +35,8 @@ public class Main {
                 System.out.println(entry.getKey() + " : " + entry.getValue());
             }
         } catch (NumberFormatException e) {
-            System.out.println("\nError Happend Please try Again :(");
-            System.out.print("Error Message: ");
+            System.out.println("\nPlease try Again :(");
+            System.out.print("Error");
             System.out.println(e.getMessage());
         }
     }
